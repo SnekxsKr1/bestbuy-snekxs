@@ -10,11 +10,11 @@ headers = { 'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKi
 
 hook = Webhook("https://discord.com/api/webhooks/851272957195583488/9nNHwxzYGZglPWsIf8DmTsBNABnnYI_AK2bylacDS1eQ52DhwKbtkZtPnatswHh-lg9M")
 
-sku = input("Enter Product SKU:")
+sku = ("14964950")
 request = requests.get(f"https://www.bestbuy.ca/ecomm-api/availability/products?accept=application%2Fvnd.bestbuy.standardproduct.v1%2Bjson&accept-language=en-CA&skus="+sku, headers=headers)
 availability = json.loads(request.content)
 stock = availability["availabilities"][0]["shipping"]["quantityRemaining"]
-
+hook.send("Monitoring: "+ sku)
 def checking():
     while True:
         if stock == 0:
