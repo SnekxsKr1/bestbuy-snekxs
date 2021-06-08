@@ -8,7 +8,7 @@ from playsound import playsound
 
 headers = { 'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36' }
 
-hook = Webhook("https://discord.com/api/webhooks/851272957195583488/9nNHwxzYGZglPWsIf8DmTsBNABnnYI_AK2bylacDS1eQ52DhwKbtkZtPnatswHh-lg9M")
+hook = Webhook("https://discord.com/api/webhooks/851884127313330196/PoItPjk0ZGCCVaNlWhJIxOARyCSYGZfzgQIltV-vN9TiHTzpLycSaxSO8K1daiINgy34")
 
 sku = ("14964950")
 request = requests.get(f"https://www.bestbuy.ca/ecomm-api/availability/products?accept=application%2Fvnd.bestbuy.standardproduct.v1%2Bjson&accept-language=en-CA&skus="+sku, headers=headers)
