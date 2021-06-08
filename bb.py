@@ -14,8 +14,12 @@ sku = ("14964950")
 request = requests.get(f"https://www.bestbuy.ca/ecomm-api/availability/products?accept=application%2Fvnd.bestbuy.standardproduct.v1%2Bjson&accept-language=en-CA&skus="+sku, headers=headers)
 availability = json.loads(request.content)
 stock = availability["availabilities"][0]["shipping"]["quantityRemaining"]
-hook.send("Monitoring: "+ sku)
+
+
 def checking():
+    request = requests.get(f"https://www.bestbuy.ca/ecomm-api/availability/products?accept=application%2Fvnd.bestbuy.standardproduct.v1%2Bjson&accept-language=en-CA&skus="+sku, headers=headers)
+    availability = json.loads(request.content)
+    stock = availability["availabilities"][0]["shipping"]["quantityRemaining"]
     while True:
         if stock == 0:
             time.sleep(10)
